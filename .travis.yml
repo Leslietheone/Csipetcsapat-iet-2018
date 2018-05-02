@@ -35,3 +35,6 @@ android:
 script:
   - ./gradlew build
 #  - ./gradlew connectedCheck
+cache:
+  directories:
+  - $HOME/.m2
