@@ -23,13 +23,14 @@ public final class FileUtils {
 
     public static void zipFiles(List<String> files, String zipFileName) throws IOException {
         OutputStream outputStream = new FileOutputStream(zipFileName);
-        
+        ZipOutputStream zipOutputStream = null;
+        FileInputStream fileInputStream = null;
         try {
-            ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream);
+             zipOutputStream = new ZipOutputStream(outputStream);
         byte[] buffer = new byte[1024];
         for (String fileName : files) {
             File file = new File(fileName);
-            FileInputStream fileInputStream = new FileInputStream(file);
+            fileInputStream = new FileInputStream(file);
             zipOutputStream.putNextEntry(new ZipEntry(file.getName()));
 
             int length;
