@@ -1557,13 +1557,12 @@ public class MigrationHelper {
         File backupFolder = new File(Exporter.BASE_FOLDER_PATH);
         backupFolder.mkdir();
         
-        FileWriter writer = null;
-        
         new Thread(new Runnable() {
             @Override
             public void run() {
                 File srcDir = new File(Exporter.LEGACY_BASE_FOLDER_PATH);
                 File dstDir = new File(Exporter.BASE_FOLDER_PATH);
+                FileWriter writer = null;
                 try {
                     moveDirectory(srcDir, dstDir);
                     File readmeFile = new File(Exporter.LEGACY_BASE_FOLDER_PATH, "README.txt");
