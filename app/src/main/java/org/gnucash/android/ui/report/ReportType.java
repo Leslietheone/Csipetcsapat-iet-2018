@@ -60,6 +60,8 @@ public enum ReportType {
                 break;
             case 4:
                 break;
+            default:
+                break;
         }
     }
 
