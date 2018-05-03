@@ -103,12 +103,12 @@ public class CalculatorEditText extends AppCompatEditText {
         addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                //throw new UnsupportedOperationException();
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                //throw new UnsupportedOperationException();
             }
 
             @Override
@@ -264,7 +264,7 @@ public class CalculatorEditText extends AppCompatEditText {
         }
 
         if (expression != null && expression.validate().isValid()) {
-            BigDecimal result = new BigDecimal(expression.evaluate());
+            BigDecimal result = new BigDecimal.valueOf(expression.evaluate());
             setValue(result);
         } else {
             setError(getContext().getString(R.string.label_error_invalid_expression));
