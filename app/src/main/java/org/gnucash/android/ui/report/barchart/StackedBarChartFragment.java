@@ -384,7 +384,9 @@ public class StackedBarChartFragment extends BaseReportFragment {
         } else {
             sum = entry.getNegativeSum() + entry.getPositiveSum();
         }
-        mSelectedValueTextView.setText(String.format(SELECTED_VALUE_PATTERN, label.trim(), value, value / sum * 100));
+        if(sum !=0){
+            mSelectedValueTextView.setText(String.format(SELECTED_VALUE_PATTERN, label.trim(), value, value / sum * 100));
+        }
     }
 
 }
