@@ -1556,7 +1556,8 @@ public class MigrationHelper {
         int oldDbVersion = 13;
         File backupFolder = new File(Exporter.BASE_FOLDER_PATH);
         backupFolder.mkdir();
-
+        FileWriter writer = null;
+        
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -1565,7 +1566,6 @@ public class MigrationHelper {
                 try {
                     moveDirectory(srcDir, dstDir);
                     File readmeFile = new File(Exporter.LEGACY_BASE_FOLDER_PATH, "README.txt");
-                    FileWriter writer = null;
                     writer = new FileWriter(readmeFile);
                     writer.write("Backup files have been moved to " + dstDir.getPath() +
                             "\nYou can now delete this folder");
