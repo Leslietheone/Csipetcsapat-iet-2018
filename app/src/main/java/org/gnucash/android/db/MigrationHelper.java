@@ -1556,6 +1556,7 @@ public class MigrationHelper {
         int oldDbVersion = 13;
         File backupFolder = new File(Exporter.BASE_FOLDER_PATH);
         backupFolder.mkdir();
+        
         FileWriter writer = null;
         
         new Thread(new Runnable() {
