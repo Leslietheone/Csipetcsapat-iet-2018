@@ -1577,9 +1577,12 @@ public class MigrationHelper {
                     Crashlytics.log(msg);
                     Crashlytics.logException(ex);
                 } finally {
-                    (if writer != null){
-                        writer.close();
-                    }
+                   try {
+                       writer.close();
+                    } catch(IOException e) {
+                            e.printStackTrace();
+                     }
+                   
                 }
 
             }
