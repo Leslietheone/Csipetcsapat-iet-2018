@@ -23,7 +23,9 @@ public final class FileUtils {
 
     public static void zipFiles(List<String> files, String zipFileName) throws IOException {
         OutputStream outputStream = new FileOutputStream(zipFileName);
-        ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream);
+        
+        try {
+            ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream);
         byte[] buffer = new byte[1024];
         for (String fileName : files) {
             File file = new File(fileName);
@@ -35,9 +37,11 @@ public final class FileUtils {
                 zipOutputStream.write(buffer, 0, length);
             }
             zipOutputStream.closeEntry();
-            fileInputStream.close();
         }
-        zipOutputStream.close();
+        } finally {
+            fileInputStream.close();
+            zipOutputStream.close();
+        }
     }
 
     /**
