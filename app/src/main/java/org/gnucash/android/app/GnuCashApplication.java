@@ -76,7 +76,7 @@ public class GnuCashApplication extends MultiDexApplication {
     /**
      * Lifetime of passcode session
      */
-    public static final long SESSION_TIMEOUT = 5 * 1000;
+    public static final long SESSION_TIMEOUT = 5 * 1000L;
 
     /**
      * Init time of passcode session
