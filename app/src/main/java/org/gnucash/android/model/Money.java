@@ -422,7 +422,7 @@ public final class Money implements Comparable<Money>{
 	 * @return <code>true</code> if the amount is negative, <code>false</code> otherwise.
 	 */
 	public boolean isNegative(){
-		return mAmount.compareTo(BigDecimal.ZERO) == -1;
+		return mAmount.compareTo(BigDecimal.ZERO) < 0;
 	}
 	
 	/**
