@@ -111,6 +111,8 @@ public class ScheduledActionsActivity extends BaseDrawerActivity {
                     return ScheduledActionsListFragment.getInstance(ScheduledAction.ActionType.TRANSACTION);
                 case INDEX_SCHEDULED_EXPORTS:
                     return ScheduledActionsListFragment.getInstance(ScheduledAction.ActionType.BACKUP);
+                default:
+                    break;
             }
             return null;
         }
